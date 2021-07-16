@@ -1,0 +1,13 @@
+*.pyc
+
+/venv
+
+credentials.txt
+
+./trial.py
+
+* __pycache__
+
+* .coverage
+
+/.cache

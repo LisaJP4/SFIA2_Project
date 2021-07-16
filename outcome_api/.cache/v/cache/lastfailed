@@ -1,0 +1,4 @@
+{
+  "service4_tests/test_mock4.py": true,
+  "service4_tests/test_mock4.py::TestHome::test_get_outcome": true
+}
