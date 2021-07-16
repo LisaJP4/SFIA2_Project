@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  server:
+    container_name: plague_server
+    image: lisajp4/plague_server
+    build: ./server
+    ports:
+      - published: 5000
+        target: 5000
+  days_api:
+    container_name: plague_days
+    image: lisajp4/plague_days
+    build: ./days_api
+    ports:
+      - published: 5001
+        target: 5001
+  outcome_api:
+    container_name: plague_outcome
+    image: lisajp4/plague_outcome
+    build: ./outcome_api
+    ports:
+      - published: 5002
+        target: 5002
+  fortune_api:
+    container_name: plague_fortune
+    image: lisajp4/plague_fortune
+    build: ./fortune_api
+    ports:
+      - published: 5003
+        target: 5003
