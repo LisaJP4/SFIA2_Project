@@ -15,7 +15,6 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "apt-get update"
                 sh "python3 -m venv venv"
                 sh "source venv/bin/activate"
                 sh "python3 create.py" 
