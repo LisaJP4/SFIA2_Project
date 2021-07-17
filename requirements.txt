@@ -11,4 +11,3 @@ tree
 requests
 flask_testing
 
-#pip install attrs==19.1.0

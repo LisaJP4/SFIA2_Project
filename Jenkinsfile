@@ -11,7 +11,7 @@ pipeline {
                 sh "docker pull lisajp4/plague_outcome"
                 sh "docker pull lisajp4/plague_fortune"
                 sh "docker pull lisajp4/plague_days"
-                sh "sudo apt-get install python3-pip -y"
+                sh "sudo apt install python3-pip"
                 sh "pip3 install -r requirements.txt"
             }
         }
