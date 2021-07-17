@@ -12,7 +12,7 @@ pipeline {
                 sh "docker pull lisajp4/plague_fortune"
                 sh "docker pull lisajp4/plague_days"
                 sh "sudo apt install python3-pip"
-                sh "pip install -r requirements.txt"
+                sh "pip3 install -r requirements.txt"
             }
         }
         stage('Test') {
