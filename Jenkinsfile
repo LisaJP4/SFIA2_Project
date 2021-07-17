@@ -6,12 +6,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "sudo apt-get update"
-                sh "python3 -m venv venv"
-                sh "source venv/bin/activate"
-                sh "python3 create.py" 
-                sh "sudo apt install python3-pip"
-                sh "pip3 install -r requirements.txt"
                 sh "export 'DATABASE_URI'=${DATABASE_URI}" 
                 sh "docker pull lisajp4/plague_server"
                 sh "docker pull lisajp4/plague_outcome"
@@ -21,6 +15,12 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh "apt-get update"
+                sh "python3 -m venv venv"
+                sh "source venv/bin/activate"
+                sh "python3 create.py" 
+                sh "apt install python3-pip"
+                sh "pip3 install -r requirements.txt"
                 sh "cd server && pytest test_mock1.py"
                 sh "cd outcome_api && pytest test_mock4.py"
                 sh "cd days_api && pytest test_mock2.py"
