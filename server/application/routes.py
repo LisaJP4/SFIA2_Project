@@ -8,6 +8,7 @@ from application import app, db
 from application.models import Fates
 
 # this must query the API for a number of days and a fortune to get an outcome based on these 
+# Stack needs to be called 'plague' to match the URL routes when it is deployed 
 @app.route('/')
 def home():
     days = requests.get('http://plague_days:5001/getday')
