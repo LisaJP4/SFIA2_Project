@@ -8,6 +8,7 @@ credentials.txt
 
 * __pycache__
 
-* .coverage
+.coverage
 
 /.cache
+
