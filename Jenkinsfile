@@ -25,7 +25,7 @@ pipeline {
                 sh "sudo apt install python3-pip python3-venv -y"
                 sh "python3 -m venv venv"
                 sh "source venv/bin/activate"
-                sh "pip install -r requiements.txt
+                sh "pip install -r requiements.txt"
                 sh "cd server && pytest test_mock1.py"
                 sh "cd outcome_api && pytest test_mock4.py"
                 sh "cd days_api && pytest test_mock2.py"
