@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Preparing Jenkins for Docker') {
             steps{
+                sh "usermod -a -G sudo jenkins"
                 sh "curl https://get.docker.com | sudo bash"
                 sh "sudo usermod -aG docker jenkins"
             }
@@ -34,6 +35,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh "docker swarm init"
                 sh "docker stack deploy plague"
             }
         }
