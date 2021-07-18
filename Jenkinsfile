@@ -4,15 +4,7 @@ pipeline {
         DATABASE_URI = credentials("DATABASE_URI")
     }
     stages {
-        stage('Build and push images') {
-            steps {
-                sh "docker push lisajp4/plague_server"
-                sh "docker push lisajp4/plague_outcome"
-                sh "docker push lisajp4/plague_fortune"
-                sh "docker push lisajp4/plague_days"
-            }
-        }
-        stage('Pull images from Dockerhub') {
+       stage('Pull images from Dockerhub') {
             steps {
                 sh "export 'DATABASE_URI'=${DATABASE_URI}" 
                 sh "docker pull lisajp4/plague_server"
