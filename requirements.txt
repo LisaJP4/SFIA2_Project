@@ -9,5 +9,5 @@ Werkzeug==0.16.1
 flask_wtf
 tree
 requests
-flask_testing
-
+Flask-Testing
+requests-mock
