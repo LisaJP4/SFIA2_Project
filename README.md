@@ -19,7 +19,9 @@ For my service, I chose to design a simple app which generated the outcome of pl
 <img width="538" alt="Trello board" src="https://user-images.githubusercontent.com/84873140/126085909-6f3104c6-7d10-4385-9b96-bd2add8b4076.png">
 
 ### Database Design (Original and Adapted)
-* 
+* Originally, I had planned for my Service 2 (Days) to be an Integar and my Service 3 (Fortune) to be a Boolean. Finally, my Service 4 (Outcome) could be a string returned in the Jinja2 template. However, as I begin the process of designing the microservices to communicate and render the information, I realised that the easiest way to make it work was through making everything a string:
+![databases](https://user-images.githubusercontent.com/84873140/126086061-fa429529-1eb4-4bc3-b978-eec4cb6bf800.png)
+
 
 ### Risk Assessment 
 * 
