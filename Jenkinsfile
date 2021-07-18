@@ -15,13 +15,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "echo "jenkins ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers"
-                sh "apt-get install python3-venv "
-                sh "python3 -m venv venv"
-                sh "source venv/bin/activate"
-                sh "python3 create.py" 
                 sh "apt-get install python3-pip"
-                sh "pip3 install -r requirements.txt"
+                sh "pip install -U pytest"
                 sh "cd server && pytest test_mock1.py"
                 sh "cd outcome_api && pytest test_mock4.py"
                 sh "cd days_api && pytest test_mock2.py"
