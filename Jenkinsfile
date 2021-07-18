@@ -20,10 +20,10 @@ pipeline {
                 sh "python3 -m venv venv"
                 sh ". ./venv/bin/activate"
                 sh "pip install -r requirements.txt"
-                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd server && pytest test_mock1.py"
-                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd outcome_api && pytest test_mock4.py"
-                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd fortune_api && pytest test_mock3.py"  
-                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd days_api && pytest test_mock2.py" 
+                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd server && python3 -m pytest test_mock1.py"
+                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd outcome_api && python3 -m pytest test_mock4.py"
+                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd fortune_api && python3 -m pytest test_mock3.py"  
+                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd days_api && python3 -m pytest test_mock2.py" 
             }
         }
         stage('Deploy') {
