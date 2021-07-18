@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # Service 3 - generate the fortune ether Good or Bad
 @app.route('/getfortune', methods=['GET'])
-def get_fortune():
+def getfortune():
     fortune = random.choice([True, False])
     return str(fortune)
    

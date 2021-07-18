@@ -10,6 +10,12 @@ class TestBase(TestCase):
         
 class TestHome(TestBase):
     def test_get_fortune(self):
-        for _ in range(4):
+        for _ in range(10):
             response = self.client.get(url_for('getfortune'))
             self.assertIn(response.data.decode('utf-8'), ["True", "False"])
+
+
+        # for _ in range(50):
+        #     response = self.client.get(url_for('get_day'))
+        #     self.assertIn(response.data.decode('utf-8'), ["1", "2", "3", "4", "5", "6", "7"])
+        #     self.assertEqual(response.status_code, 200)

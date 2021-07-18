@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # Service 4 - use fortune and days to deliver a fate
 @app.route('/getoutcome', methods=['GET', 'POST'])
-def get_outcome():
+def getoutcome():
     fate = request.get_json()
     if fate == {"1" : "True"}:
         return "You only got a light touch - you are back out into the field in no time."
