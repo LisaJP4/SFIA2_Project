@@ -19,8 +19,6 @@ pipeline {
                 sh "sudo apt install python3-pip python3-venv -y"
                 sh "python3 -m venv venv"
                 sh ". ./venv/bin/activate && pip install -r requirements.txt && pip3 install Flask-Testing"
-                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd server/server_tests && python3 -m pytest test_mock1.py"
-                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd outcome_api/service4_tests && python3 -m pytest test_mock4.py"
                 sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd fortune_api/service3_tests && python3 -m pytest test_mock3.py"  
                 sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd days_api/service2_tests && python3 -m pytest test_mock2.py" 
             }
