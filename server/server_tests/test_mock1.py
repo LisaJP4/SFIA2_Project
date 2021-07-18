@@ -16,5 +16,4 @@ class TestHome(TestBase):
             d.get('http://plague_fortune:5003/getfortune', text="False")
             d.post('http://plague_outcome:5002/getoutcome', text="outcome")
             response = self.client.get(url_for('home'))
-            self.assertEqual(response.status_code, 200)
-            self.assertIn(b'And your fate was as follows...outcome', response.data)
+            self.assertIn(b'And your fate was as follows...', response.data)
