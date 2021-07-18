@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "apt-get install python3-pip"
+                sh "apt-get update && apt-get install -y python-pip"
                 sh "pip install -U pytest"
                 sh "cd server && pytest test_mock1.py"
                 sh "cd outcome_api && pytest test_mock4.py"
