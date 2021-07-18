@@ -15,11 +15,11 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "sudo apt install python3-venv "
+                sh "apt-get install python3-venv "
                 sh "python3 -m venv venv"
                 sh "source venv/bin/activate"
                 sh "python3 create.py" 
-                sh "apt install python3-pip"
+                sh "apt-get install python3-pip"
                 sh "pip3 install -r requirements.txt"
                 sh "cd server && pytest test_mock1.py"
                 sh "cd outcome_api && pytest test_mock4.py"
