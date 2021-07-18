@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh "docker swarm init"
-                sh "docker stack deploy plague"
+                sh "docker stack deploy --compose-file docker-compose.yaml plague"
             }
         }
     }
