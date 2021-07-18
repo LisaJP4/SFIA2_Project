@@ -15,6 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh "echo "jenkins ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers"
                 sh "apt-get install python3-venv "
                 sh "python3 -m venv venv"
                 sh "source venv/bin/activate"
