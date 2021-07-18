@@ -13,16 +13,6 @@ pipeline {
                 sh "docker pull lisajp4/plague_days"
             }
         }
-        stage('Testing the files') {
-            steps {
-                sh "sudo apt-get update"
-                sh "sudo apt install python3-pip python3-venv -y"
-                sh "python3 -m venv venv"
-                sh ". ./venv/bin/activate && pip install -r requirements.txt && pip3 install Flask-Testing"
-                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd fortune_api/service3_tests && python3 -m pytest test_mock3.py"  
-                sh "export 'DATABASE_URI'=${DATABASE_URI} && . ./venv/bin/activate && cd days_api/service2_tests && python3 -m pytest test_mock2.py" 
-            }
-        }
         stage('Deploy') {
             steps {
                 sh "docker stack deploy --compose-file docker-compose.yaml plague"
