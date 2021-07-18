@@ -11,7 +11,7 @@ pipeline {
                 sh "docker push lisajp4/plague_outcome"
                 sh "docker push lisajp4/plague_fortune"
                 sh "docker push lisajp4/plague_days"
-    stages {
+            }
         stage('Pull images from Dockerhub') {
             steps {
                 sh "export 'DATABASE_URI'=${DATABASE_URI}" 
