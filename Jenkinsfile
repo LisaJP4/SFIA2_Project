@@ -15,8 +15,8 @@ pipeline {
         }
         stage('Testing the files') {
             steps {
-                sh "sudo apt update -y"
-                sh "sudo apt install python3-pip python3-venv -y"
+                sh "apt-get update -y"
+                sh "apt install python3-pip python3-venv -y"
                 sh "python3 -m venv venv"
                 sh "source venv/bin/activate"
                 sh "pip install -r requiements.txt"
