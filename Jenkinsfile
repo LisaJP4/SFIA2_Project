@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "apt-get update && apt-get install -y python-pip && rm -rf /var/lib/apt/lists/*"
+                sh "sudo apt-get update && sudo apt-get install -y python-pip && rm -rf /var/lib/apt/lists/*"
                 sh "pip install -U pytest"
                 sh "cd server && pytest test_mock1.py"
                 sh "cd outcome_api && pytest test_mock4.py"
