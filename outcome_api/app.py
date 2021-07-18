@@ -15,6 +15,14 @@ def get_outcome():
         return "You only got a light touch - you are back out into the field in no time."
     elif fate == {"2": "False"}:
         return "You prayed to be spared - but your prayers were not heard. The plague makes your teeth fall out."
+    elif fate == {"3": "True"}:
+        return "The plague makes you sick as a dog but you're back in the tavern by the end of the week."
+    elif fate == {"4": "True"}:
+        return "The plague makes you sick as a dog but you're back in the tavern by the end of the week."
+    elif fate == {"3": "False"}:
+        return "The plague turns your skin blue. You survive, but spend the rest of your life as a pariah."
+    elif fate == {"4": "False"}:
+        return "The plague turns your skin blue. You survive, but spend the rest of your life as a pariah."
     elif fate == {"5" : "True"}:
         return "A plague doctor makes you drink forty filthy potions. It makes you even sicker - but you are still alive by the end of the week."
     elif fate == {"5" : "False"}:
