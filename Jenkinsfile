@@ -6,7 +6,6 @@ pipeline {
     stages {
         stage('Build and push images') {
             steps {
-                sh "docker rm -f $(docker ps -aq)
                 sh "docker-compose up --build"
                 sh "docker push lisajp4/plague_server"
                 sh "docker push lisajp4/plague_outcome"
