@@ -4,13 +4,6 @@ pipeline {
         DATABASE_URI = credentials("DATABASE_URI")
     }
     stages {
-        stage('Preparing Jenkins for Docker') {
-            steps{
-                sh "usermod -a -G sudo jenkins"
-                sh "curl https://get.docker.com | sudo bash"
-                sh "sudo usermod -aG docker jenkins"
-            }
-        }
         stage('Pull images from Dockerhub') {
             steps {
                 sh "export 'DATABASE_URI'=${DATABASE_URI}" 
