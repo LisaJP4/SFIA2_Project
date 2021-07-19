@@ -8,7 +8,7 @@ app = Flask(__name__)
 def get_outcome():
     fate = request.get_json()
     if fate == {"1" : "True"}:
-        return "You only got a light touch - you are back out into the field in no time."
+        return "You only got a light touch - but you claim two more sick days."
     elif fate == {"1" : "False"}:
         return "You prayed to be spared - but your prayers were not heard. The plague makes your teeth fall out."
     elif fate == {"2": "True"}:
