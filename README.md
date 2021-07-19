@@ -25,7 +25,7 @@ For my service, I chose to design a simple app which generated the outcome of pl
 
 
 ### Risk Assessment 
-* 
+* [Risk Assessment 2 - Sheet1.pdf](https://github.com/LisaJP4/SFIA2_Project/files/6837241/Risk.Assessment.2.-.Sheet1.pdf)
 
 ## CI/CD Pipeline
 ### Explanation of the Pipeline itself
