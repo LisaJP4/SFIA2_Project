@@ -2,7 +2,7 @@
 
 ## Introduction
 ### SFIA2 Project Brief
-* For this project, we were required to create a service-orientated architecture for our application, which must be composed of at least 4 services that work together:
+* For this project, we were required to create a service-orientated architecture for our application, which had to be composed of at least 4 services that work together:
 - Service #1 was the core service, which rendered Jinja2 (HTML) templates required to interact with the application. It also communicated with the other 3 services and persisted data in a data base.
 - Service #2 and #3 generated random "Objects", which could be a random number, letter, or other more complex method.
 - Service #4 also created an "Object", this time based on the outcome of what the previous two services had generated.
@@ -63,7 +63,7 @@ Once my application had been designed and tested, I wanted to automate the build
 
   
 ### Webhook
-As I had linked my Jenkins to build code from my *Dev* branch, I decided that the webhook should also go on this branch. I configured the Jenkins job to allow a webhook, then  
+As I had linked my Jenkins to build code from my *Dev* branch, I decided that the webhook should also go on this branch. I configured the Jenkins job to allow a webhook, then ensure that the GitHub repo would deliver new code automatically to the CI Server. 
 <img width="187" alt="webhook is set up" src="https://user-images.githubusercontent.com/84873140/126086510-1ccfb121-a083-499d-a5c9-983a21ae4367.png">
 
   
