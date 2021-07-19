@@ -30,6 +30,7 @@ For my service, I chose to design a simple app which generated the outcome of pl
 ## CI/CD Pipeline
 ### Explanation of the Pipeline itself
 ![CI_CD pipeline](https://user-images.githubusercontent.com/84873140/126086154-ae2562ba-b038-43f2-9142-e0613b4aa3d7.png)
+
 Above I have provided a simple diagram showing the CI/CD Pipeline. Here is how each phase is implemented: 
 - *1 - Development Environment* - The Python logo represents the development enviornment in which code for each of the services is written.
 - *2 - Version Control System* - Using GitHub, I was able to keep track of the different versions of my code. I also implemented using feature-branches in order to separate new changes from the main source code. 
@@ -54,26 +55,35 @@ Once my application had been designed and tested, I wanted to automate the build
 (3) Deploy - I wanted to get Jenkins to deploy the stack that I had created for my containers. This should have then allowed me to perform a rolling update - an update where a user experiences no downtime from an application. 
 
 ### Missing Stage of the Pipeline
-* Testing
+* Testing - Unfortunately, many of the errors I encountered was during the stage when Jenkins would automate the testing. There were firstly errors with the folders it was searching, then it could not find *pytest*, and finally it began highlighting the issues that I had with the tests I had written:
+
+<img width="613" alt="failed build" src="https://user-images.githubusercontent.com/84873140/126086807-b731f6b5-50b3-408b-81da-d055d3058b4b.png">
+
 <img width="718" alt="failed test" src="https://user-images.githubusercontent.com/84873140/126085583-3008a1dd-36d8-4634-85c6-24a2578c5dc9.png">
 
   
 ### Webhook
-
+As I had linked my Jenkins to build code from my *Dev* branch, I decided that the webhook should also go on this branch. I configured the Jenkins job to allow a webhook, then  
 <img width="187" alt="webhook is set up" src="https://user-images.githubusercontent.com/84873140/126086510-1ccfb121-a083-499d-a5c9-983a21ae4367.png">
 
   
 ### Affect of the Missing Stages on a Rolling Update
-  
-## Architectures
-  ### Docker-Compose
-  ### Docker Swarm
-  ### NGINX
-  
-  <img width="241" alt="nginx bad gateway" src="https://user-images.githubusercontent.com/84873140/126086520-0f49685a-9133-41bf-968e-ba4b0530f631.png">
+Without the core three stages that I wanted to get Jenkins to automate, I was also unable to configure the stack to deploy the rolling update that I wanted; this was due to the fact that in my current Jenkinsfile, the containers were pulled from Dockerhub instead of through the Anisble playbook which otherwise would have been set up to configure the enviornment.  
+
+### NGINX
+I also attempled to use a separate Virtual Machine to set up NGINX as a reverse proxy server and/or a load balancer between the two machines. Unfortunately, I did not manage to correctly configure it and received this error:
+ 
+<img width="241" alt="nginx bad gateway" src="https://user-images.githubusercontent.com/84873140/126086520-0f49685a-9133-41bf-968e-ba4b0530f631.png">
 
 
 ## System Configuration
+![app diagram](https://user-images.githubusercontent.com/84873140/126087243-e52401f1-7b55-4853-8b9a-27ea2bec7062.png)
 
+As seen in the diagram above, my application works as follows: 
+- Service 1 sends a **GET** request to Service 2, which returns a string of a number between 1 - 7 (inclusive)
+- Service 1 also sends a **GET** request to Service 3, which returns a string of either 'True' or 'False'
+- Service 1 then sends this information in a **POST** request, in the form of a json file, to Service 4. 
+- Service 4 sends back a string ('outcome') to Service 1, which then renders this into the Jinja2 template.
 
 ## Future Improvements
+- If I was to carry out this project again, I would create a Test Plan for each of my services: this way, I could test more efficiently and prevent the issue with my Pipeline that I ran into during the development of this project. 
