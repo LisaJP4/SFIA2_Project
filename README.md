@@ -45,10 +45,13 @@ Above I have provided a simple diagram showing the CI/CD Pipeline. Here is how e
 
 ### How was Jenkins used to Build, Test and Deploy my applcation
 <img width="464" alt="failed build 2" src="https://user-images.githubusercontent.com/84873140/126086581-93d24482-9977-49a4-a01b-0fdd52993dbe.png">
-* Once my application had been designed and tested, I wanted to automate the building, testing and deployment using Jenkins. I did this by creating a Jenkinsfile in my repository and writing the commands into it which Jenkins would follow. After linking Jenkins to the *Dev* branch on my Github for the project, I encountered many errors and many failed builds; originally, I just created three simple stages: 
-- Build - I pulled my latest images of my services from Dockerhub. 
-- Test - I wanted to enable Jenkins to test the files from my repository as I had in my terminal when creating the tests.  
-- Deploy - I wanted to get Jenkins to deploy the stack that I had created for my containers. This should have then allowed me to perform a rolling update - an update where a user experiences no downtime from an application. 
+Once my application had been designed and tested, I wanted to automate the building, testing and deployment using Jenkins. I did this by creating a Jenkinsfile in my repository and writing the commands into it which Jenkins would follow. After linking Jenkins to the *Dev* branch on my Github for the project, I encountered many errors and many failed builds; originally, I just created three simple stages: 
+
+(1) Build - I pulled my latest images of my services from Dockerhub. 
+
+(2) Test - I wanted to enable Jenkins to test the files from my repository as I had in my terminal when creating the tests.  
+
+(3) Deploy - I wanted to get Jenkins to deploy the stack that I had created for my containers. This should have then allowed me to perform a rolling update - an update where a user experiences no downtime from an application. 
 
 ### Missing Stage of the Pipeline
 * Testing
